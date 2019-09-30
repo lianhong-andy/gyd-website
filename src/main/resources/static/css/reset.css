@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {    
+    margin:0;   
+     padding:0;  
+	list-style:none;
+	
+} 
+body img{
+  border:none;
+  list-style:none;
+}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  -webkit-text-size-adjust:none;
+}
+.clear{
+  clear:both;
+}
+a{
+ color:#000;
+ border:0;
+ text-decoration:none;
+}
+
+/*--清除浮动--*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+
+a:hover{
+  color:#f00;
+  text-decoration:none;
+}
+a:link {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);	/*禁止链接高亮*/
+	-webkit-touch-callout: none;					/*禁止链接长按弹出选项菜单*/
+}
+a:active, a:focus {-moz-outline:none;outline:none;ie-dummy:expression(this.hideFocus=true);}
+/*合并边线,边线空间至零.*/
+table { 
+     border-collapse:collapse;   
+     border-spacing:0;   
+} 
+/*清除边线*/
+fieldset,img {    
+     border:0;   
+} 
+ol,ul { 
+     list-style:none;   
+} 
+caption,th { 
+     text-align:left;   
+} 
+h1,h2,h3,h4,h5,h6 { 
+     font-size:100%;   
+     font-weight:normal;   
+} 
+
+
+/*清除浮动*/
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+* html .clearfix {height: 1%;}
+

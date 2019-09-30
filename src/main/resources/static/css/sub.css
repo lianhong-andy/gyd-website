@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* CSS Document */
+
+.sub_ban{
+    height:320px;
+    background:url(../img/sub_ban.jpg) no-repeat center center;
+}
+
+.center{
+    width:1200px;
+    margin:0 auto;
+    padding:20px 0 60px;
+}
+.center .left{
+    float:left;
+    width:208px;
+}
+.center .left .l_nav li a{
+    padding:9px 0 4px 28px;
+    line-height:20px;
+    font-size:18px;
+    color:#fff;
+    display:block;
+    width:172px;
+    position:relative;
+    background:#3367C3;
+    border-bottom:1px solid #C4E9E1;
+}
+.center .left .l_nav li a span{
+    display:block;
+}
+.center .left .l_nav li a i{
+    position:absolute;
+    background:url(../img/li_ico.gif) no-repeat;
+    width:8px;
+    height:15px;
+    right:-8px;
+    top:20px;
+    display:none;
+}
+.center .left .l_nav li a span{
+    font-size:12px;
+}
+.center .left .l_nav li a:hover ,.center .left .l_nav li .a_hover{
+    background:#2A4D8B;
+}
+.center .left .l_nav li a:hover i ,.center .left .l_nav li .a_hover i{
+    display:block;
+}
+
+
+
+.center .right{
+    float:right;
+    width:960px;
+}
+.center .right .r_tit{
+    height:44px;
+    background:url(../img/stt_bg.png) repeat-x bottom;
+    border-bottom:1px solid #c9c9c9;
+}
+.center .right .r_tit span{
+    float:left;
+    color:#507585;
+    line-height:44px;
+    font-size:20px;
+    padding-left:5px;
+}
+.center .right .r_tit .weizhi{
+    line-height:24px;
+    padding-top:16px;
+    color:#507585;
+    float:right;
+    font-family:"宋体";
+}
+.center .right .r_tit .weizhi a{
+    color:#507585;
+}
+.center .right .r_tit .weizhi a:hover{
+    text-decoration:underline;
+}
+.center .right .commm{
+    padding:12px 0 30px;
+    line-height:2;
+    overflow:hidden;
+}
+.center .right .commm img ,.center .right .commm table{
+    max-width:100% !important;
+    height:auto !important;
+}
+
+.new_list{
+    padding:5px 0 30px;
+}
+.new_list li{
+    padding:16px 0;
+    border-bottom:1px dotted #aaa;
+}
+.new_list li span{
+    display:block;
+    color:#aaa;
+    line-height:20px;
+    padding-bottom:2px;
+}
+.new_list li a:hover{
+    text-decoration:underline;
+}
+.new_list li h3{
+    line-height:26px;
+    padding:6px 0;
+    font-size:15px;
+    font-weight:bold;
+}
+.new_list li h3 a{
+    color:#333;
+}
+.new_list li p{
+    color:#777;
+    line-height:28px;
+}
+.new_list li p a{
+    color:#F1C30F;
+}
+
+.anli_list{
+    padding-top:20px;
+    overflow:hidden;
+}
+.anli_list ul{
+    width:106%;
+}
+.anli_list ul li{
+    float:left;
+    width:465px;
+    margin-right:30px;
+    margin-bottom:30px;
+    display:inline-block;
+}
+.anli_list ul li a{
+    display:block;
+    width:423px;
+    height:190px;
+    padding:20px;
+    border:1px solid #CFE2EA;
+    background:#fff;
+}
+.anli_list ul li a .img{
+    width:192px;
+    height:190px;
+    overflow:hidden;
+    float:left;
+    padding-right:19px;
+    border-right:1px dashed #CEE1EA;
+    margin-right:20px;
+}
+.anli_list ul li a .img img{
+    width:192px;
+    height:auto;
+    min-height:190px;
+}
+.anli_list ul li a span{
+    color:#aaa;
+    display:inline-block;
+    padding-top:18px;
+}
+.anli_list ul li a h3{
+    font-size:16px;
+    color:#354F5B;
+    line-height:26px;
+    padding:10px 0 20px;
+}
+.anli_list ul li a p{
+    color:#F1C30F;
+    font-size:14px;
+}
+.anli_list ul li a:hover{
+    border-color:#F00;
+}
+.art_tt{
+    font-size:20px;
+    text-align:center;
+    font-weight:bold;
+    padding:10px 0 8px;
+    line-height:24px;
+}
+.art_time{
+    text-align:center;
+    padding-bottom:16px;
+    color:#444;
+}
+.art_body{
+    padding:0px 0 50px;
+    line-height:2;
+    overflow:hidden;
+}
+.art_body img ,.art_body table{
+    max-width:100% !important;
+    height:auto !important;
+}
+
+
+
+/*-------分页样式-------*/
+
+.quotes {
+    clear: both;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+.quotes ul li {
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    display: inline;
+    margin-right: 4px;
+    padding: 4px 7px;
+    text-decoration: none;
+}
+.quotes .thisclass {
+    background: #CCCCCC;
+}
+
