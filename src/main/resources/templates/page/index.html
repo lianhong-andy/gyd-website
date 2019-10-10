@@ -46,8 +46,8 @@
         <div class="logo"><a href="http://www.lunda-energy.com/"></a></div>
         <div class="h_em"><a target="_blank" href="http://exmail.qq.com/cgi-bin/loginpage?t=dm_loginpage&amp;s=logout">邮箱登陆</a>
         </div>
-        <div class="nav">
-            <ul>
+        <!--<div class="nav">
+            <ul th:each="menu,iterStat:${gydMenuList}">
                 <li class="m"><a href="http://www.lunda-energy.com/">首页</a></li>
                 <li class="m">
                     <a href="http://www.lunda-energy.com/ld-html/gongsijieshao/">公司介绍</a>
@@ -99,6 +99,20 @@
                     </dl>
                 </li>
             </ul>
+        </div>-->
+        <div class="nav">
+            <ul th:each="menu,iterStat:${gydMenuList}">
+                <li class="m">
+                    <a th:href="${menu.url}" th:text="${menu.name}"></a>
+                    <dl class="sub">
+                        <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/gongsijianjie">公司简介</a></dt>
+                        <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/zuzhijiagou">组织架构</a></dt>
+                        <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/qiyewenhua">企业文化</a></dt>
+                        <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/rencaizhaopin">人才招聘</a></dt>
+                        <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/lianxiwomen">联系我们</a></dt>
+                    </dl>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -114,7 +128,7 @@
                 </ul>
 
                 <!-- 轮播图片 -->
-                <div class="carousel-inner">
+                <!--<div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://s2.ax1x.com/2019/09/27/uMQaLQ.jpg">
                     </div>
@@ -123,6 +137,11 @@
                     </div>
                     <div class="carousel-item">
                         <img src="https://s2.ax1x.com/2019/09/27/uMQaLQ.jpg">
+                    </div>
+                </div>-->
+                <div class="carousel-inner" th:each="banner,iterStat:${bannerList}">
+                    <div class="carousel-item" th:classappend="${iterStat.index==0}?'active':''" >
+                        <img th:src="${banner.img}">
                     </div>
                 </div>
 
