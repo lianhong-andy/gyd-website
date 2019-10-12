@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>online_customer_service</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = window.onresize = window.onscroll = function () {
+        var oBox = document.getElementById("divQQbox");
+        var oLine = document.getElementById("divOnline");
+        var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        setTimeout(function () {
+            clearInterval(oBox.timer);
+            var iTop = parseInt((document.documentElement.clientHeight - oBox.offsetHeight) / 2) + iScrollTop;
+            oBox.timer = setInterval(function () {
+                var iSpeed = (iTop - oBox.offsetTop) / 8;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                oBox.offsetTop == iTop ? clearInterval(oBox.timer) : (oBox.style.top = oBox.offsetTop + iSpeed + "px");
+            }, 30)
+        }, 100)
+    };
+</script>
+<script language="javascript">
+    function CloseQQ() {
+        divQQbox.style.display = "none";
+        return true;
+    }
+</script>
+<!--在线客服 begin -->
+
+<div class="QQbox" id="divQQbox" style="top: 147px;">
+    <div class="Qlist" id="divOnline">
+        <div class="close"><a onclick="CloseQQ()" href="javascript:;" shape="circle" coords="91,16,12">关闭</a></div>
+        <ul>
+            <li>
+                <img src="static/img/ewm.png">
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

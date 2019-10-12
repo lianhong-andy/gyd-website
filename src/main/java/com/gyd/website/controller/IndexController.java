@@ -29,15 +29,6 @@ public class IndexController {
     @GetMapping(value = {"", "/"})
     public ModelAndView index(HttpServletRequest request) {
         ModelAndView mv = new ModelAndView();
-        /*User user = (User) request.getSession().getAttribute("user");
-
-        if (ObjectUtil.isNull(user)) {
-            mv.setViewName("redirect:/user/login");
-        } else {
-            mv.addObject(user);
-            mv.setViewName("page/index");
-        }*/
-
         mv.setViewName("page/index");
         List<GydMenu> gydMenuList = indexDao.findAll();
         List<Banner> indexBanner = bannerDao.findBannerByTypeEquals(0);

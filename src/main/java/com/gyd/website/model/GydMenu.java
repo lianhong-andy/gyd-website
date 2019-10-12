@@ -3,6 +3,7 @@ package com.gyd.website.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author lianhong
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "gyd_menu")
-public class GydMenu {
+public class GydMenu implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "menu_id")
@@ -33,6 +34,9 @@ public class GydMenu {
     private Integer sort;
     @Column(name = "show_wxapp")
     private Integer showWxApp;
-    @Column(name = "description")
-    private Integer description;
+    @Lob
+    @Column(name = "description", columnDefinition="TEXT")
+    private String description;
+
+
 }
