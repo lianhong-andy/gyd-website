@@ -42,3 +42,6 @@ logging:
     com.andy: debug
     com.andy.SQL: debug
     org.hibernate.type: trace
+qiniu:
+  accessKey: QJFmQkOrWirudQQkxAHEORjktP2HO4LdXT6tqaHo
+  accessSecret: Ne9MS0LeN0PPdCl4Z6r5V_UFrpfj6Pb4FnV4AJqw

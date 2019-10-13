@@ -101,11 +101,11 @@
             </ul>
         </div>-->
         <div class="nav">
-            <ul th:each="menu,iterStat:${gydMenuList}">
+            <ul th:each="menu,iterStat:${indexVo.menuList}">
                 <li class="m">
                     <a th:href="${menu.url}" th:text="${menu.name}"></a>
                     <dl class="sub">
-                        <dt><a href="page/introduction/gongsijianjie">公司简介</a></dt>
+                        <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${subMenu.url}" th:text="${subMenu.name}"></a></dt>
                         <!--<dt><a href="introduction/zuzhijiagou">组织架构</a></dt>-->
                         <!--<dt><a href="introduction/qiyewenhua">企业文化</a></dt>-->
                         <!--<dt><a href="introduction/rencaizhaopin">人才招聘</a></dt>-->
@@ -129,7 +129,7 @@
 
                 <!-- 轮播图片 -->
                 <div class="carousel-inner">
-                    <div class="carousel-item" th:each="banner,iterStat:${bannerList}" th:classappend="${iterStat.index==0}?'active':''">
+                    <div class="carousel-item" th:each="banner,iterStat:${indexVo.bannerList}" th:classappend="${iterStat.index==0}?'active':''">
                         <img th:src="${banner.img}">
                     </div>
                 </div>

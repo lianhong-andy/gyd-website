@@ -37,7 +37,7 @@ public class IndexController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("page/index");
         IndexVo indexVo = new IndexVo();
-        List<GydMenu> gydMenuList = indexDao.findAll();
+        List<GydMenu> gydMenuList = indexDao.findByParentIdEqualsOrderBySortDesc(0L);
         List<GydMenuVo> menuVoList = new ArrayList<>();
         if (CollectionUtil.isNotEmpty(gydMenuList)) {
             List<GydMenuVo> menuList = gydMenuList.stream().map(gydMenu -> {
@@ -45,7 +45,7 @@ public class IndexController {
                 BeanUtil.copyProperties(gydMenu,gydMenuVo);
                 Long menuId = gydMenuVo.getMenuId();
                 List<GydMenu> subMenuList = new ArrayList<>();
-                List<GydMenu> subMenus = indexDao.findByParentIdEqualsOrderBySort(menuId);
+                List<GydMenu> subMenus = indexDao.findByParentIdEqualsOrderBySortDesc(menuId);
                 if (CollectionUtil.isNotEmpty(subMenus)) {
                     subMenuList.addAll(subMenus);
                 }
@@ -56,16 +56,13 @@ public class IndexController {
                 menuVoList.addAll(menuList);
             }
         }
-        List<Banner> indexBanner = bannerDao.findBannerByTypeEquals(0);
-        mv.addObject(gydMenuList);
-        mv.addObject(indexBanner);
         Banner banner = new Banner();
         banner.setType(0);
         Example<Banner> example = Example.of(banner);
-        Pageable sort = PageRequest.of(0,3,Sort.Direction.DESC,"sort");
-        Page<Banner> all = bannerDao.findAll(example, sort);
+        Pageable sort = PageRequest.of(0,2,Sort.Direction.DESC,"sort");
+        Page<Banner> indexBanner = bannerDao.findAll(example, sort);
         indexVo.setMenuList(menuVoList);
-        indexVo.setBannerList(indexBanner);
+        indexVo.setBannerList(indexBanner.getContent());
         mv.addObject(indexVo);
         return mv;
     }

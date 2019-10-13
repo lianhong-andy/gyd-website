@@ -39,7 +39,7 @@ public class GydMenu implements Serializable {
     @Column(name = "description", columnDefinition="TEXT")
     private String description;
     @Column(name = "parent_id")
-    private String parentId;
+    private Long parentId;
 
 
 }
