@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author lianhong
@@ -37,6 +38,8 @@ public class GydMenu implements Serializable {
     @Lob
     @Column(name = "description", columnDefinition="TEXT")
     private String description;
+    @Column(name = "parent_id")
+    private String parentId;
 
 
 }
