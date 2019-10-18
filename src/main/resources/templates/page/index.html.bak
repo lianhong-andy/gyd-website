@@ -62,7 +62,6 @@
     </div>
 </div>
 <div id="main">
-    <!--轮播图-->
     <content th:replace="common/banner :: banner"></content>
     <div class="center clearfloat">
         <div class="cen_li">
@@ -71,7 +70,7 @@
                 <img src="static/img/ind_c1.jpg">
                 <p>
                     广州高远达新能源科技有限公司（以下简称“高远达新能源”）是一家致力于清洁能源供应、节能环保、能源管理服务、能源贸易、实业投资的公司，公司位于广州市白云区国家高新产业园-广州民营科技园，注册资本500万。公司业务范围涉及液化天然气（LNG）销售、LNG气化站设计、建设、运营、蒸汽承包和技术服务咨询、为工业提供能源管理、节能改造方案、能源综合解决方案、工程承包建设等，旨在提高客户经济效益性，实现双方的互利共赢。 ...
-                    <a href="#">[ 查看详情 ]</a></p>
+                    <a href="http://www.lunda-energy.com/ld-html/gongsijieshao/">[ 查看详情 ]</a></p>
             </div>
         </div>
         <div class="cen_li">
@@ -81,7 +80,7 @@
                 <h4>LNG加气站建设的五种模式</h4>
                 <p>
                     1）固定式LNG加气站：以LNG为气源，直接为LNG车辆充装LNG。主要建设内容包括：站房、网架、LNG防护堤（围堰）、场坪、围墙、进出站道路、设备基础等土建工程；工艺、电气、仪表等安装调试工程；消防系统工程、IC卡系统工程、视频监控系统、形象制作工程、外配水、电、暖、讯工程等辅助工程。建设特点：占地大、建设周期较长、投资较高。2）固定式L-CNG加气站：以LNG为气源<a
-                        href="#">[ 查看详情 ]</a></p>
+                        href="http://www.lunda-energy.com/ld-html/zhishiyuandi/tianranqizhishi/2015/0616/21.html">[ 查看详情 ]</a></p>
             </div>
         </div>
         <div class="cen_li mgnone">
@@ -90,24 +89,24 @@
                 <img src="static/img/ind_c3.jpg">
                 <div class="ind_news">
                     <ul>
-                        <li class="on"><h5><a title="xxx"
-                                              href="#">xxx</a>
+                        <li class="on"><h5><a title="伦达能源2019张家界快乐之旅"
+                                              href="http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai/2019/0924/430.html">伦达能源2019张家界快乐之旅</a>
                         </h5>
-                            <p style="display: block;">xxx...<a title="xxx"
-                                                                                                 href="#">[
+                            <p style="display: block;">公司福利来一波！！！ 生活不止有工作，还有诗和远方。 身体和灵魂，总有一...<a title="伦达能源2019张家界快乐之旅"
+                                                                                                 href="http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai/2019/0924/430.html">[
                                 查看详情 ]</a></p></li>
-                        <li><h5><a title="xxx"
-                                   href="#">xxx</a>
+                        <li><h5><a title="天然气产供储销建设谋划重大布局"
+                                   href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun/2019/0918/429.html">天然气产供储销建设谋划重大布局</a>
                         </h5>
                             <p style="display: none;">近日发布的《中国天然气发展报告（2019）》预计，2019年我国天然气表观消费量...<a
                                     title="天然气产供储销建设谋划重大布局"
-                                    href="#">[
+                                    href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun/2019/0918/429.html">[
                                 查看详情 ]</a></p></li>
                         <li><h5><a title="全球LNG船市场新格局"
-                                   href="#">全球LNG船市场新格局</a>
+                                   href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun/2019/0916/428.html">全球LNG船市场新格局</a>
                         </h5>
                             <p style="display: none;">国际海事组织在2018年发布国际海运温室气体减排初步战略，明确了到2050年，国...<a title="全球LNG船市场新格局"
-                                                                                                    href="#">[
+                                                                                                    href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun/2019/0916/428.html">[
                                 查看详情 ]</a></p></li>
                     </ul>
                 </div>
@@ -116,11 +115,73 @@
     </div>
 
 </div>
-<!--联系方式/地址-->
 <content th:replace="common/footer :: index_footer"></content>
+<!--
+<div id="foot">
+    <div class="foot clearfloat">
+        <div class="f_logo"><img src="static/img/f_logo.gif"></div>
+        <div class="foot_r">
+            <p><span>电话：<strong>020-61965915</strong></span><span>总部地址：广州市白云区民营科技园敏捷科创中心1栋631   茂名分部地址：茂名市官渡二路139号</span></p>
+            <div class="f_cpr">版权所有广州高远达新能源科技有限公司@gzgydnewenergy.com
+                <div class="selCont">
+                    <select onchange="MM_jumpMenu(&#39;parent&#39;,this,0)" name="my-dropdown" id="my-dropdown"
+                            style="display: none;">
+                        <option selected="selected" value="">友情链接</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="static/js/jQselect.js"></script>
+<script type="text/javascript" src="static/js/scrolltopcontrol.js"></script>
+<script type="text/javascript">
+    $('#my-dropdown').sSelect('');
+    $('#my-dropdownCountries').sSelect({ddMaxHeight: '300px'});
+
+    function MM_jumpMenu(targ, selObj, restore) { //v3.0
+        eval("window.open('" + selObj.options[selObj.selectedIndex].value + "')");
+        $("#my-dropdown option").eq(0).attr("selected", "selected");
+    }
+</script>
+-->
+
+
+<!--<script type="text/javascript">
+    window.onload = window.onresize = window.onscroll = function () {
+        var oBox = document.getElementById("divQQbox");
+        var oLine = document.getElementById("divOnline");
+        var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        setTimeout(function () {
+            clearInterval(oBox.timer);
+            var iTop = parseInt((document.documentElement.clientHeight - oBox.offsetHeight) / 2) + iScrollTop;
+            oBox.timer = setInterval(function () {
+                var iSpeed = (iTop - oBox.offsetTop) / 8;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                oBox.offsetTop == iTop ? clearInterval(oBox.timer) : (oBox.style.top = oBox.offsetTop + iSpeed + "px");
+            }, 30)
+        }, 100)
+    };
+</script>
+<script language="javascript">
+    function CloseQQ() {
+        divQQbox.style.display = "none";
+        return true;
+    }
+</script>-->
 <!--在线客服 begin -->
+
+<!--<div class="QQbox" id="divQQbox" style="top: 147px;">
+    <div class="Qlist" id="divOnline">
+        <div class="close"><a onclick="CloseQQ()" href="javascript:;" shape="circle" coords="91,16,12">关闭</a></div>
+        <ul>
+            <li>
+                <img src="static/img/ewm.png">
+            </li>
+        </ul>
+    </div>
+</div>-->
 <content th:replace="common/online_customer_service :: divQQbox"></content>
-<!--回到顶部-->
 <content th:replace="common/footer :: return_top"></content>
 </body>
 </html>
