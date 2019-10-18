@@ -1,5 +1,5 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="header">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,79 @@
     <script type="text/javascript" src="static/js/jquery.SuperSlide.2.1.js"></script>
     <script type="text/javascript" src="static/js/js-com.js"></script>
 </head>
-<body th:fragment="content">
-
+<body>
+<div class="head" th:fragment="head">
+    <div class="logo"><a href="http://www.lunda-energy.com/"></a></div>
+    <div class="h_em"><a target="_blank" href="http://exmail.qq.com/cgi-bin/loginpage?t=dm_loginpage&amp;s=logout">邮箱登陆</a>
+    </div>
+    <!--<div class="nav">
+        <ul th:each="menu,iterStat:${gydMenuList}">
+            <li class="m"><a href="http://www.lunda-energy.com/">首页</a></li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/gongsijieshao/">公司介绍</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/gongsijianjie">公司简介</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/zuzhijiagou">组织架构</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/qiyewenhua">企业文化</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/rencaizhaopin">人才招聘</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/gongsijieshao/lianxiwomen">联系我们</a></dt>
+                </dl>
+            </li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/hezuoanli/">合作案例</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/hezuoanli/hezuomoshi">合作模式</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/hezuoanli/hezuoanli">合作案例</a></dt>
+                </dl>
+            </li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/xingyezixun/">新闻资讯</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun">行业资讯</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai">伦达动态</a></dt>
+                </dl>
+            </li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/zhishiyuandi/">知识园地</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/zhishiyuandi/tianranqizhishi">天然气知识</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/zhishiyuandi/zhengcefagui">政策法规</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/zhishiyuandi/ranqianquan">燃气安全</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/zhishiyuandi/shiguanli">事故案例</a></dt>
+                </dl>
+            </li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/yunyingguanli/shiguyingjiyuan/">运营管理</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/yunyingguanli/shiguyingjiyuan">事故应急预案</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/yunyingguanli/anquanjiankongguanli">安全监控管理</a>
+                    </dt>
+                </dl>
+            </li>
+            <li class="m">
+                <a href="http://www.lunda-energy.com/ld-html/jienenjishu/fuyangranshaojishu/">节能技术</a>
+                <dl class="sub">
+                    <dt><a href="http://www.lunda-energy.com/ld-html/jienenjishu/fuyangranshaojishu">富氧燃烧技术</a></dt>
+                    <dt><a href="http://www.lunda-energy.com/ld-html/jienenjishu/xureshigaowenranshaojishu">蓄热式高温燃烧技术</a>
+                    </dt>
+                </dl>
+            </li>
+        </ul>
+    </div>-->
+    <div class="nav">
+        <ul th:each="menu,iterStat:${indexVo.menuList}">
+            <li class="m">
+                <a th:href="${menu.url}" th:text="${menu.name}"></a>
+                <dl class="sub">
+                    <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${subMenu.url}" th:text="${subMenu.name}"></a></dt>
+                    <!--<dt><a href="introduction/zuzhijiagou">组织架构</a></dt>-->
+                    <!--<dt><a href="introduction/qiyewenhua">企业文化</a></dt>-->
+                    <!--<dt><a href="introduction/rencaizhaopin">人才招聘</a></dt>-->
+                    <!--<dt><a href="introduction/lianxiwomen">联系我们</a></dt>-->
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

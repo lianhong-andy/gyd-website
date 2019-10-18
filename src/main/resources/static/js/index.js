@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>online_customer_service</title>
-</head>
-<body>
-<script type="text/javascript">
+index = {
+
+};
+$(function () {
+    $('#my-dropdown').sSelect('');
+    $('#my-dropdownCountries').sSelect({ddMaxHeight: '300px'});
+
+    function MM_jumpMenu(targ, selObj, restore) { //v3.0
+        eval("window.open('" + selObj.options[selObj.selectedIndex].value + "')");
+        $("#my-dropdown option").eq(0).attr("selected", "selected");
+    }
+
     window.onload = window.onresize = window.onscroll = function () {
         var oBox = document.getElementById("divQQbox");
         var oLine = document.getElementById("divOnline");
@@ -20,24 +24,9 @@
             }, 30)
         }, 100)
     };
-</script>
-<script language="javascript">
+
     function CloseQQ() {
         divQQbox.style.display = "none";
         return true;
     }
-</script>
-<!--在线客服 begin -->
-
-<div class="QQbox" id="divQQbox" style="top: 147px;">
-    <div class="Qlist" id="divOnline">
-        <div class="close"><a onclick="CloseQQ()" href="javascript:;" shape="circle" coords="91,16,12">关闭</a></div>
-        <ul>
-            <li>
-                <img src="static/img/ewm.png">
-            </li>
-        </ul>
-    </div>
-</div>
-</body>
-</html>
+});

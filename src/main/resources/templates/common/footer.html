@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" th:fragment="index_footer">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <!-- th:fragment 定义需要引入的代码块，该div包含的内容即为引用的公共内容 -->
 <head>
 </head>
 <div>
-    <div id="foot">
+    <div id="foot" th:fragment="index_footer">
         <div class="foot clearfloat">
             <div class="f_logo"><img src="static/img/f_logo.gif"></div>
             <div class="foot_r">
@@ -22,19 +22,7 @@
         </div>
     </div>
 </div>
-<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/js/jQselect.js"></script>
-<script type="text/javascript" src="static/js/scrolltopcontrol.js"></script>
-<script type="text/javascript">
-    $('#my-dropdown').sSelect('');
-    $('#my-dropdownCountries').sSelect({ddMaxHeight: '300px'});
-
-    function MM_jumpMenu(targ, selObj, restore) { //v3.0
-        eval("window.open('" + selObj.options[selObj.selectedIndex].value + "')");
-        $("#my-dropdown option").eq(0).attr("selected", "selected");
-    }
-</script>
+<div id="topcontrol" title="返回顶部" style="position: fixed; bottom: 80px; right: 30px; opacity: 0; cursor: pointer;" th:fragment="return_top">
+    <img src="static/img/top.gif">
+</div>
 </html>

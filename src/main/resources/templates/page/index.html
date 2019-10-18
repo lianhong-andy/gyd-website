@@ -32,6 +32,9 @@
     <script type="text/javascript" src="static/plugins/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/jquery.SuperSlide.2.1.js"></script>
     <script type="text/javascript" src="static/js/js-com.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/jQselect.js"></script>
+    <script type="text/javascript" src="static/js/scrolltopcontrol.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -197,6 +200,8 @@
     </div>
 
 </div>
+<content th:replace="common/footer :: index_footer"></content>
+<!--
 <div id="foot">
     <div class="foot clearfloat">
         <div class="f_logo"><img src="static/img/f_logo.gif"></div>
@@ -224,9 +229,10 @@
         $("#my-dropdown option").eq(0).attr("selected", "selected");
     }
 </script>
+-->
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     window.onload = window.onresize = window.onscroll = function () {
         var oBox = document.getElementById("divQQbox");
         var oLine = document.getElementById("divOnline");
@@ -247,10 +253,10 @@
         divQQbox.style.display = "none";
         return true;
     }
-</script>
+</script>-->
 <!--在线客服 begin -->
 
-<div class="QQbox" id="divQQbox" style="top: 147px;">
+<!--<div class="QQbox" id="divQQbox" style="top: 147px;">
     <div class="Qlist" id="divOnline">
         <div class="close"><a onclick="CloseQQ()" href="javascript:;" shape="circle" coords="91,16,12">关闭</a></div>
         <ul>
@@ -259,11 +265,8 @@
             </li>
         </ul>
     </div>
-</div>
-
-
-<div id="topcontrol" title="返回顶部" style="position: fixed; bottom: 80px; right: 30px; opacity: 0; cursor: pointer;">
-    <img src="static/img/top.gif">
-</div>
+</div>-->
+<content th:replace="common/online_customer_service :: divQQbox"></content>
+<content th:replace="common/footer :: return_top"></content>
 </body>
 </html>
