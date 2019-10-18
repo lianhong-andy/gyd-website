@@ -62,38 +62,11 @@
     </div>
 </div>
 <div id="main">
-    <div>
-        <div>
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <!-- 指示符 -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>
-
-                <!-- 轮播图片 -->
-                <div class="carousel-inner">
-                    <div class="carousel-item" th:each="banner,iterStat:${indexVo.bannerList}" th:classappend="${iterStat.index==0}?'active':''">
-                        <img th:src="${banner.img}">
-                    </div>
-                </div>
-
-                <!-- 左右切换按钮 -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-
-            </div>
-        </div>
-    </div>
+    <content th:replace="common/banner :: banner"></content>
     <div class="center clearfloat">
         <div class="cen_li">
             <h3>关于我们 <font>About Us</font></h3>
-            <div class="padd">
+            <div class="padd" style="background-color: white">
                 <img src="static/img/ind_c1.jpg">
                 <p>
                     广州高远达新能源科技有限公司（以下简称“高远达新能源”）是一家致力于清洁能源供应、节能环保、能源管理服务、能源贸易、实业投资的公司，公司位于广州市白云区国家高新产业园-广州民营科技园，注册资本500万。公司业务范围涉及液化天然气（LNG）销售、LNG气化站设计、建设、运营、蒸汽承包和技术服务咨询、为工业提供能源管理、节能改造方案、能源综合解决方案、工程承包建设等，旨在提高客户经济效益性，实现双方的互利共赢。 ...
