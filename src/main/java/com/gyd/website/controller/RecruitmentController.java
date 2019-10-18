@@ -1,6 +1,5 @@
 package com.gyd.website.controller;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.repository.IndexDao;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Optional;
 
 /**
  * @author lianhong
