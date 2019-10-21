@@ -18,6 +18,6 @@ public interface IndexDao extends JpaRepository<GydMenu,Long> {
     @Query(value = "select b1.* from banner b1 left join banner b2 on b1.parent_id = b2.id",nativeQuery = true)
     List<Banner> findAllMenus();
 
-    List<GydMenu> findByParentIdEqualsOrderBySortDesc(Long parentId);
+    List<GydMenu> findByParentIdEqualsOrderBySort(Long parentId);
 
 }

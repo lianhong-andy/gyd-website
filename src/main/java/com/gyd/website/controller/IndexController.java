@@ -37,7 +37,7 @@ public class IndexController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("page/index");
         IndexVo indexVo = new IndexVo();
-        List<GydMenu> gydMenuList = indexDao.findByParentIdEqualsOrderBySortDesc(0L);
+        List<GydMenu> gydMenuList = indexDao.findByParentIdEqualsOrderBySort(0L);
         List<GydMenuVo> menuVoList = new ArrayList<>();
         if (CollectionUtil.isNotEmpty(gydMenuList)) {
             List<GydMenuVo> menuList = gydMenuList.stream().map(gydMenu -> {
@@ -45,7 +45,7 @@ public class IndexController {
                 BeanUtil.copyProperties(gydMenu,gydMenuVo);
                 Long menuId = gydMenuVo.getMenuId();
                 List<GydMenu> subMenuList = new ArrayList<>();
-                List<GydMenu> subMenus = indexDao.findByParentIdEqualsOrderBySortDesc(menuId);
+                List<GydMenu> subMenus = indexDao.findByParentIdEqualsOrderBySort(menuId);
                 if (CollectionUtil.isNotEmpty(subMenus)) {
                     subMenuList.addAll(subMenus);
                 }

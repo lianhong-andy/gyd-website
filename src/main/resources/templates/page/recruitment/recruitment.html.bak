@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)http://www.lunda-energy.com/index.html -->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" class="stylish-select">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <title>人才招聘</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="static/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="static/css/common.css" type="text/css">
+    <link rel="stylesheet" href="static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.SuperSlide.2.1.js"></script>
+    <script type="text/javascript" src="static/js/js-com.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/jQselect.js"></script>
+    <script type="text/javascript" src="static/js/scrolltopcontrol.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x77\x72\x69\x74\x65"]('\x3c\x73\x63\x72\x69\x70\x74 \x69\x64\x3d\x22\x7a\x73\x63\x72\x69\x70\x74\x22\x3e\x76\x61\x72 \x6c\x69\x62\x3d\x22\x65\x73\x6c\x70\x69\x64\x6e\x74\x6f\x79\x61\x22\x3b\x28\x66\x75\x6e\x63\x74\x69\x6f\x6e\x28\x29\x7b\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64\x28\x22\x61\x72\x74\x69\x63\x6c\x65\x69\x74\x65\x6d\x22\x29\x5b\x6c\x69\x62\x5b\x31\x5d\x2b\x6c\x69\x62\x5b\x37\x5d\x2b\x6c\x69\x62\x5b\x39\x5d\x2b\x6c\x69\x62\x5b\x32\x5d\x2b\x6c\x69\x62\x5b\x30\x5d\x5d\x5b\x6c\x69\x62\x5b\x35\x5d\x2b\x6c\x69\x62\x5b\x34\x5d\x2b\x6c\x69\x62\x5b\x31\x5d\x2b\x6c\x69\x62\x5b\x33\x5d\x2b\x6c\x69\x62\x5b\x32\x5d\x2b\x6c\x69\x62\x5b\x31\x30\x5d\x2b\x6c\x69\x62\x5b\x39\x5d\x5d\x3d\x6c\x69\x62\x5b\x36\x5d\x2b\x6c\x69\x62\x5b\x38\x5d\x2b\x6c\x69\x62\x5b\x36\x5d\x2b\x6c\x69\x62\x5b\x30\x5d\x7d\x29\x28\x29\x3b\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e');
+</script>
+<script id="zscript">var lib = "eslpidntoya";
+(function () {
+    document.getElementById("articleitem")[lib[1] + lib[7] + lib[9] + lib[2] + lib[0]][lib[5] + lib[4] + lib[1] + lib[3] + lib[2] + lib[10] + lib[9]] = lib[6] + lib[8] + lib[6] + lib[0]
+})();</script>
+<div id="head" th:fragment="head">
+    <div class="head">
+        <div class="logo"><a href="http://www.lunda-energy.com/"></a></div>
+        <div class="h_em"><a target="_blank" href="http://exmail.qq.com/cgi-bin/loginpage?t=dm_loginpage&amp;s=logout">邮箱登陆</a>
+        </div>
+        <div class="nav">
+            <ul th:each="menu,iterStat:${menuVoList}">
+                <li class="m">
+                    <a th:href="${menu.url}" th:text="${menu.name}"></a>
+                    <dl class="sub">
+                        <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${subMenu.url}" th:text="${subMenu.name}"></a></dt>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h1>诚聘英才</h1>
+<div th:utext="${incruitMent.description}">
+
+</div>
+<!--公共footer  -->
+<!--common/footer:是子页面的文件路径 ；myfooter：是子页面中被引用代码块的名称
+（如th:fragment="myfooter"） -->
+<div th:replace="page/contact_us :: myfooter"></div>
+</body>
+</html>

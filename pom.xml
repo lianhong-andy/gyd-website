@@ -63,10 +63,10 @@
         </dependency>
 
         <!-- 解析 UserAgent 信息 -->
-        <dependency>
+        <!--<dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>

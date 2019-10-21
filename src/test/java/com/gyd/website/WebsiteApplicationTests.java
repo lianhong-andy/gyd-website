@@ -30,7 +30,7 @@ public class WebsiteApplicationTests {
     private BannerDao bannerDao;
     @Test
     public void test1(){
-        List<GydMenu> list = indexDao.findByParentIdEqualsOrderBySortDesc(0L);
+        List<GydMenu> list = indexDao.findByParentIdEqualsOrderBySort(0L);
         System.out.println("StrUtil.toString(list) = " + StrUtil.toString(list));
         Banner banner = new Banner();
         banner.setType(0);
