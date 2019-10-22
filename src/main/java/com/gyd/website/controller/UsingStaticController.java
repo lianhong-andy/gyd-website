@@ -11,9 +11,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  */
 @Configuration
 public class UsingStaticController extends WebMvcConfigurationSupport {
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        /**可放掉多个路径下的静态资源*/
-        registry.addResourceHandler("/static/**","/templates/**").addResourceLocations("classpath:/static/","classpath:/templates/");
-    }
+
 }

@@ -49,3 +49,11 @@
     </div>
 </div>
 ```
+
+## WebMvcConfigurationSupport和WebMvcConfigurer的区别
+### 1、WebMvcConfigurationSupport的出现
+springboot2.0之后配置拦截器extends 的WebMvcConfigurerAdapter过时，取而代之的是WebMvcConfigurationSupport。WebMvcConfigurerAdapter只是对WebMvcCofigurer的空实现,而WebMvcConfigurationSupport的实现的方法更全面
+
+### 2、注意点
+继承WebMvcConfigurationSupport会发现Spring Boot的WebMvc自动配置失效(WebMvcAutoConfiguration自动化配置)。
+导致无法视图解析器无法解析并返回到对应的视图。

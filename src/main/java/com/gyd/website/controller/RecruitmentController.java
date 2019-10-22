@@ -2,6 +2,7 @@ package com.gyd.website.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.util.ObjectUtil;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.pojo.vo.GydMenuVo;
 import com.gyd.website.repository.BannerDao;
@@ -35,24 +36,9 @@ public class RecruitmentController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("page/recruitment/recruitment");
         GydMenu incruitMent = indexDao.findById(menuId).get();
-        List<GydMenu> gydMenuList = indexDao.findByParentIdEqualsOrderBySort(0L);
         List<GydMenuVo> menuVoList = new ArrayList<>();
-        if (CollectionUtil.isNotEmpty(gydMenuList)) {
-            List<GydMenuVo> menuList = gydMenuList.stream().map(gydMenu -> {
-                GydMenuVo gydMenuVo = new GydMenuVo();
-                BeanUtil.copyProperties(gydMenu,gydMenuVo);
-                Long mid = gydMenuVo.getMenuId();
-                List<GydMenu> subMenuList = new ArrayList<>();
-                List<GydMenu> subMenus = indexDao.findByParentIdEqualsOrderBySort(mid);
-                if (CollectionUtil.isNotEmpty(subMenus)) {
-                    subMenuList.addAll(subMenus);
-                }
-                gydMenuVo.setSubMenuList(subMenuList);
-                return gydMenuVo;
-            }).collect(Collectors.toList());
-            if (CollectionUtil.isNotEmpty(menuList)){
-                menuVoList.addAll(menuList);
-            }
+        if(ObjectUtil.isNotNull(request.getAttribute("menuListVo"))) {
+            menuVoList.addAll((List<GydMenuVo>) request.getAttribute("menuListVo"));
         }
         mv.addObject("incruitMent",incruitMent);
         mv.addObject("menuVo",menuVoList);

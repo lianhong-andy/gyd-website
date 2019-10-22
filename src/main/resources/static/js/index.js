@@ -30,3 +30,4 @@ $(function () {
         return true;
     }
 });
+var basePath = "/gyd/";

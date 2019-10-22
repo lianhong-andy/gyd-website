@@ -104,28 +104,32 @@
     </div>
 </div>
 </body>
-<ul>
-    <li><strong>1运营管理培训生2名。(培养方向：气站管理，热力系统管理，燃气设计、市场开发经理助理等职位)</span></strong></li>
-    <li><strong><span style="font-size: 18px">2锅炉管理及水质处理管理员2名（培养方向：关于热力系统、热力节能改造、水质处理等方面的管理）</span></strong></li>
-    <li>
-        <p>
-        <h5><strong>应聘要求：</strong></h5>
-        <ul>
-            <li>1、负责管理公司燃气气站的整体运营工作。</li>
-            <li>2、对公司气站日常的维护、保养、安全工作的监督，检查。</li>
-            <li>3、中专及以上学历，燃气、自动化、机械类相关专业，应届生均可；</li>
-            <li>4、具备高度责任心，较好的沟通能力，团队奉献精神，服从上级安排，有C1驾驶证优先。</li>
-        </ul>
-        福利待遇:单休，实习期后为员工购买五险，通讯补助、工作餐住宿补贴、激励奖金等。
-        </p>
-        <p>
-        <h5><strong>联系方式:</strong></h5>
-        <ul>
-            <li>1、有意者请将简历投至公司邮箱<a href="mailto:gzgyd2017@163.com">gzgyd2017@163.com</a></li>
-            <li>2、公司联系方式：<strong>020-61969515</strong>；<strong>15521166245</strong>  HR纪生（微信同步）</li>
-            <li>3、公司地点:广州市白云区民营科技园敏捷科创中心1栋631</li>
-        </ul>
-        </p>
-    </li>
-</ul>
+<script th:inline="javascript">
+    $(function () {
+        var url = "/gyd/menu";
+        var params = {};
+        Ajax(url,params,function (res) {
+            res.forEach(function (val) {
+                alert(val);
+            })
+        });
+    });
+
+    var Ajax = function(url,data,callback){
+        var param ={};
+        param.url = url;
+        if(data){
+            param.data = data;
+        }
+        param.type = 'GET';
+        param.contentType="application/json";
+        param.success = function(json){
+            if(callback){
+                callback(json);
+            }
+        };
+
+        $.ajax(param);
+    };
+</script>
 </html>
