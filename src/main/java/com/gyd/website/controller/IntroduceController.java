@@ -36,7 +36,7 @@ public class IntroduceController {
         }
         GydMenu introduce = indexDao.findById(menuId).get();
         Long parentId = introduce.getParentId();
-        List<GydMenu> introduce = indexDao.findByParentIdEqualsOrderBySort(parentId);
+        List<GydMenu> vo = indexDao.findByParentIdEqualsOrderBySort(parentId);
         mv.addObject("introduce",introduce);
         mv.addObject("menuVo",menuVoList);
 
