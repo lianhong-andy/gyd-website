@@ -19,7 +19,7 @@
         <div class="h_em"><a target="_blank" href="http://exmail.qq.com/cgi-bin/loginpage?t=dm_loginpage&amp;s=logout">邮箱登陆</a>
         </div>
         <div class="nav">
-            <ul th:each="menu,iterStat:${indexVo.menuList}">
+            <ul th:each="menu,iterStat:${menuVo}">
                 <li class="m">
                     <a th:href="${menu.url}" th:text="${menu.name}"></a>
                     <dl class="sub">

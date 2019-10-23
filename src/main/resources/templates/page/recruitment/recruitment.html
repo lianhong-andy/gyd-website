@@ -26,7 +26,7 @@
                 <li class="m">
                     <a th:href="${menu.url}" th:text="${menu.name}"></a>
                     <dl class="sub">
-                        <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${menu.url}" th:text="${menu.name}"></a></dt>
+                        <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${subMenu.url}" th:text="${subMenu.name}"></a></dt>
                     </dl>
                 </li>
             </ul>
@@ -69,3 +69,5 @@
 <content th:replace="common/online_customer_service :: divQQbox"></content>
 <!--回到顶部-->
 <content th:replace="common/footer :: return_top"></content>
+</body>
+</html>

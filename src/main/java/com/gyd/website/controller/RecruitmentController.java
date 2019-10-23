@@ -2,7 +2,10 @@ package com.gyd.website.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.pojo.vo.GydMenuVo;
 import com.gyd.website.repository.BannerDao;
@@ -42,6 +45,9 @@ public class RecruitmentController {
         }
         mv.addObject("incruitMent",incruitMent);
         mv.addObject("menuVo",menuVoList);
+        for (GydMenuVo gydMenuVo : menuVoList) {
+            log.info("mid:{},name:{},sub:{}",gydMenuVo.getMenuId(),gydMenuVo.getName(),StrUtil.toString(gydMenuVo.getSubMenuList()));
+        }
         return mv;
     }
 }

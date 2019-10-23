@@ -1,8 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<!-- saved from url=(0079)http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai/2019/0924/430.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" class="stylish-select"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <header th:replace="~{common/head :: header}"></header>
+    <title>公司介绍</title>
+    <link rel="stylesheet" href="/gyd/static/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/gyd/static/css/common.css" type="text/css">
+    <link rel="stylesheet" href="/gyd/static/css/sub.css" type="text/css">
+    <script type="text/javascript" src="/gyd/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/gyd/static/js/jquery.SuperSlide.2.1.js"></script>
+    <script type="text/javascript" src="/gyd/static/js/js-com.js"></script>
+    <script type="text/javascript" src="/gyd/static/js/jQselect.js"></script>
+    <script type="text/javascript" src="/gyd/static/js/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="/gyd/static/js/index.js"></script>
 </head>
-<body></body>
+<body>
+<div id="head">
+    <div class="head">
+        <div class="logo"><a href="#"></a></div>
+        <div class="h_em"><a target="_blank" href="http://exmail.qq.com/cgi-bin/loginpage?t=dm_loginpage&amp;s=logout">邮箱登陆</a>
+        </div>
+        <div class="nav">
+            <ul th:each="menu,iterStat:${menuVo}">
+                <li class="m">
+                    <a th:href="${menu.url}" th:text="${menu.name}"></a>
+                    <dl class="sub">
+                        <dt th:each="subMenu,iterStat:${menu.subMenuList}"><a th:href="${subMenu.url}" th:text="${subMenu.name}"></a></dt>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div class="sub_ban" style="background:url(/gyd/static/img/banner/hhh.jpg) no-repeat center center;"></div>
+
+    <div class="center clearfloat">
+        <div class="left">
+            <div class="l_nav">
+                <ul>
+
+                    <li><a href="http://www.lunda-energy.com/ld-html/xingyezixun/xingyezixun/">公司介绍<span>Industry News</span><i></i></a></li>
+                    <li><a href="http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai/" class="a_hover">伦达动态<span>Lun Da Dynamic</span><i></i></a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="r_tit clearfloat"><span>人才招聘</span><div class="weizhi">所处位置：<a href="#">主页</a> &gt; <a href="#">人才招聘</a> &gt;  </div></div>
+            <div class="commm">
+                <div class="art_tt">高远达招聘需求</div>
+                <div class="art_time">时间：2019-09-24 18:07 　 阅读：<script src="#" type="text/javascript" language="javascript"></script>202次</div>
+                <div class="art_body">
+                    <section data-role="outer" label="Powered by 135editor.com" style="font-size:16px;">
+                    </section>
+
+                </div>
+                <div class="art_pn">
+                    <p>上一篇：<a href="#">没有了</a> </p>
+                    <p>下一篇：没有了 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--联系方式/地址-->
+<content th:replace="common/footer :: index_footer"></content>
+<!--在线客服 begin -->
+<content th:replace="common/online_customer_service :: divQQbox"></content>
+<!--回到顶部-->
+<!--<content th:replace="common/footer :: return_top"></content>-->
+<div id="topcontrol" title="返回顶部" style="position: fixed; bottom: 80px; right: 30px; opacity: 0; cursor: pointer;"><img src="/gyd/static/img/top.gif"></div>
+</body>
 </html>
