@@ -1,15 +1,12 @@
 package com.gyd.website.controller;
 
-import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.convert.Convert;
-import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.pojo.vo.GydMenuVo;
 import com.gyd.website.repository.BannerDao;
-import com.gyd.website.repository.IndexDao;
+import com.gyd.website.repository.MenuDao;
+import com.gyd.website.service.MenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 /**
  * @author lianhong
@@ -31,23 +28,24 @@ import java.util.stream.Collectors;
 @Slf4j
 public class RecruitmentController {
     @Autowired
-    private IndexDao indexDao;
+    private MenuDao menuDao;
     @Autowired
     private BannerDao bannerDao;
+    @Autowired
+    private MenuService menuService;
     @GetMapping("/recruit/info/{menuId}")
     public ModelAndView recruitmentInfo(HttpServletRequest request,@PathVariable Long menuId) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("page/recruitment/recruitment");
-        GydMenu incruitMent = indexDao.findById(menuId).get();
         List<GydMenuVo> menuVoList = new ArrayList<>();
         if(ObjectUtil.isNotNull(request.getAttribute("menuListVo"))) {
             menuVoList.addAll((List<GydMenuVo>) request.getAttribute("menuListVo"));
         }
-        mv.addObject("incruitMent",incruitMent);
+        List<GydMenuVo> recruitInfos = menuService.getMenuInfoById(menuId);
+        GydMenu gydMenu = menuDao.findById(menuId).get();
+        mv.addObject("leftMenus",recruitInfos);
         mv.addObject("menuVo",menuVoList);
-        for (GydMenuVo gydMenuVo : menuVoList) {
-            log.info("mid:{},name:{},sub:{}",gydMenuVo.getMenuId(),gydMenuVo.getName(),StrUtil.toString(gydMenuVo.getSubMenuList()));
-        }
+        mv.addObject("menu",gydMenu);
         return mv;
     }
 }

@@ -39,19 +39,19 @@
     <div class="center clearfloat">
         <div class="left">
             <div class="l_nav">
-                <ul>
-                    <li><a href="#" class="a_hover">人才招聘<span>Industry News</span><i></i></a></li>
+                <ul th:each="leftMenu,iterStat:${leftMenus}">
+                    <li><a href="#" th:class="${leftMenu.menuId==menu.menuId?'a_hover':''}"><span th:text="${leftMenu.name}"></span><span th:text="${leftMenu.value}"></span><i></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="right">
-            <div class="r_tit clearfloat"><span>人才招聘</span><div class="weizhi">所处位置：<a href="/gyd/">主页</a> &gt; <a href="#">人才招聘</a> &gt;  </div></div>
+            <div class="r_tit clearfloat"><span th:text="${menu.name}"></span><div class="weizhi">所处位置：<a href="/gyd/">主页</a> &gt; <a th:href="${menu.url}" th:text="${menu.name}"></a> </div></div>
             <div class="commm">
                 <div class="art_tt">高远达招聘需求</div>
                 <div class="art_time">时间：2019-09-24 18:07 　 阅读：<script src="#" type="text/javascript" language="javascript"></script>202次</div>
                 <div class="art_body">
                     <section data-role="outer" label="Powered by 135editor.com" style="font-size:16px;">
-                        <div th:utext="${incruitMent.description}"></div>
+                        <div th:utext="${menu.description}"></div>
                     </section>
 
                 </div>

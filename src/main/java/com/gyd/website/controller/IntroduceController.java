@@ -3,7 +3,8 @@ package com.gyd.website.controller;
 import cn.hutool.core.util.ObjectUtil;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.pojo.vo.GydMenuVo;
-import com.gyd.website.repository.IndexDao;
+import com.gyd.website.repository.MenuDao;
+import com.gyd.website.service.MenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author lianhong
@@ -25,7 +25,10 @@ import java.util.Optional;
 @Slf4j
 public class IntroduceController {
     @Autowired
-    private IndexDao indexDao;
+    private MenuDao menuDao;
+
+    @Autowired
+    private MenuService menuService;
     @GetMapping("/introduce/info/{menuId}")
     public ModelAndView introduceInfo(HttpServletRequest request, @PathVariable Long menuId) {
         ModelAndView mv = new ModelAndView();
@@ -34,11 +37,11 @@ public class IntroduceController {
         if (ObjectUtil.isNotNull(request.getAttribute("menuListVo"))) {
             menuVoList = (List<GydMenuVo>) request.getAttribute("menuListVo");
         }
-        GydMenu introduce = indexDao.findById(menuId).get();
-        Long parentId = introduce.getParentId();
-        List<GydMenu> vo = indexDao.findByParentIdEqualsOrderBySort(parentId);
-        mv.addObject("introduce",introduce);
+        List<GydMenuVo> introduceInfos = menuService.getMenuInfoById(menuId);
+        GydMenu gydMenu = menuDao.findById(menuId).get();
+        mv.addObject("leftMenus",introduceInfos);
         mv.addObject("menuVo",menuVoList);
+        mv.addObject("menu",gydMenu);
 
         return mv;
     }

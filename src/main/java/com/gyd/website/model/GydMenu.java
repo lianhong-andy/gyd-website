@@ -20,6 +20,8 @@ public class GydMenu implements Serializable {
     private Long menuId;
     @Column(name = "name")
     private String name;
+    @Column(name = "value")
+    private String value;
     @Column(name = "img_url")
     private String img_url;
     @Column(name = "url")

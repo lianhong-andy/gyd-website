@@ -1,14 +1,11 @@
 package com.gyd.website.controller;
 
-import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.gyd.website.model.Banner;
-import com.gyd.website.model.GydMenu;
 import com.gyd.website.pojo.vo.GydMenuVo;
 import com.gyd.website.pojo.vo.IndexVo;
 import com.gyd.website.repository.BannerDao;
-import com.gyd.website.repository.IndexDao;
+import com.gyd.website.repository.MenuDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
@@ -19,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author lianhong
@@ -30,7 +26,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class IndexController {
     @Autowired
-    private IndexDao indexDao;
+    private MenuDao menuDao;
     @Autowired
     private BannerDao bannerDao;
     @GetMapping(value = {"", "/"})

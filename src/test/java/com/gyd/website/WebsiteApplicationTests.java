@@ -1,11 +1,10 @@
 package com.gyd.website;
 
-import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
 import com.gyd.website.model.Banner;
 import com.gyd.website.model.GydMenu;
 import com.gyd.website.repository.BannerDao;
-import com.gyd.website.repository.IndexDao;
+import com.gyd.website.repository.MenuDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +23,13 @@ public class WebsiteApplicationTests {
     }
 
     @Autowired
-    private IndexDao indexDao;
+    private MenuDao menuDao;
 
     @Autowired
     private BannerDao bannerDao;
     @Test
     public void test1(){
-        List<GydMenu> list = indexDao.findByParentIdEqualsOrderBySort(0L);
+        List<GydMenu> list = menuDao.findByParentIdEqualsOrderBySort(0L);
         System.out.println("StrUtil.toString(list) = " + StrUtil.toString(list));
         Banner banner = new Banner();
         banner.setType(0);
