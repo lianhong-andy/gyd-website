@@ -2,9 +2,7 @@
 <!-- saved from url=(0079)http://www.lunda-energy.com/ld-html/xingyezixun/lundadongtai/2019/0924/430.html -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" class="stylish-select"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>广州高远达能源科技有限公司</title>
-    <meta name="keywords" content="高远达,能源,2019,张家界,快乐,之旅,公司,福利,">
-    <meta name="description" content="公司福利来一波！！！ 生活不止有工作，还有诗和远方。 身体和灵魂，总有一个要在路上。 一场说走就走的旅行，开始拉~ 伦达福利就是这么任性。 为丰富员工文化生活，缓解工作压">
+    <title>联系我们</title>
     <link rel="stylesheet" href="/gyd/static/css/reset.css" type="text/css">
     <link rel="stylesheet" href="/gyd/static/css/common.css" type="text/css">
     <link rel="stylesheet" href="/gyd/static/css/sub.css" type="text/css">
@@ -47,13 +45,12 @@
         <div class="right">
             <div class="r_tit clearfloat"><span th:text="${menu.name}"></span><div class="weizhi">所处位置：<a href="/gyd/">主页</a> &gt; <a th:href="${menu.url}" th:text="${menu.name}"></a> </div></div>
             <div class="commm">
-                <div class="art_tt">高远达招聘需求</div>
+                <div class="art_tt">联系我们</div>
                 <div class="art_time">时间：2019-09-24 18:07 　 阅读：<script src="#" type="text/javascript" language="javascript"></script>202次</div>
                 <div class="art_body">
                     <section data-role="outer" label="Powered by 135editor.com" style="font-size:16px;">
                         <div th:utext="${menu.description}"></div>
                     </section>
-
                 </div>
                 <div class="art_pn">
                     <p>上一篇：<a href="#">没有了</a> </p>
@@ -68,5 +65,6 @@
 <!--在线客服 begin -->
 <content th:replace="common/online_customer_service :: divQQbox"></content>
 <!--回到顶部-->
+<content th:replace="common/footer :: return_top"></content>
 </body>
 </html>
